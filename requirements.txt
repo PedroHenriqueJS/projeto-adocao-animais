@@ -166,9 +166,9 @@ https://code.visualstudio.com/
 
 #--> python manage.py runserver
 
-#Para acessar o servidor local do django, acessar:
+#Para acessar o servidor local do django, digite na barra de pesquisa do navegador:
 
-http://localhost:800
+http://localhost:8000
 
 
 
