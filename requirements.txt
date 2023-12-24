@@ -1,0 +1,174 @@
+#Aqui está as instruções de como rodar o código do projeto
+
+#--------------Instalação de softwares:------------------
+
+####################################################
+#                 SOFTWARES                        #
+# Instalacao de softwares para desenvolvimento de  #
+# software para Web utilizando Python, Framework   #
+# Bootstrap, Framework Django e banco de dados     #
+# PostgreSQL.                                      #
+####################################################
+
+# Baixar e instalar Python e não esquecer de marcar para a adicionar ao Path ou as variaveis de ambiente do Sistema Operacional.
+
+https://www.python.org/
+
+# Baixar e instalar Miniconda para a versão do Python que foi instalada e não esquecer de marcar para a adicionar ao Path ou as variaveis de ambiente do Sistema Operacional.
+
+https://docs.conda.io/ 
+
+# Baixar e instalar o VSCode.
+
+https://code.visualstudio.com/
+
+# Instalar PostgreSQL ultima versão. Coloque a senha padrao "123456" e usuário padrão "postgres".
+
+
+#---------Criando ambiente Virtual e suas dependências----------------
+
+############################################
+#                  MINICONDA               #
+# Criacao de Ambiente virtual isolado para #
+# instalacao das bibliotecas necessárias   #
+# para o desenvolvimento do projeto        #
+############################################
+
+# Criar ambiente virtual de programação:
+
+#---> conda create -n nome_do_projeto_que_voce_escolher
+
+# Liste os ambientes criados.
+
+#---> conda env list
+
+# Remover ambiente virtual de programacao (apenas caso precise):
+
+#---> conda env remove -n nome_do_projeto_que_voce_escolher 
+
+# Ative o ambiente criado. 
+# Verifique se no início da linha comandos aparece o nome 
+# do projeto entre parenteses conforme o seguinte exemplo
+# "(modeloapp) Pedro:~ pedro$".
+
+#---> conda activate nome_do_projeto_que_voce_escolher
+
+#Para desativar:
+
+#---> conda deactivate
+
+#######################################################
+# As etapas a seguir devem ser executadas dentro      #
+# do ambiente virtual de desenvolvimento do miniconda.#
+#######################################################
+
+#############################################
+# Instalação de bibliotecas Python e Django #
+#############################################
+
+# Utilizar o terminal(Command Prompt) do VSCODE faça todas as 
+# operacoes (Para os usuarios de windows não utilize o PowerShell)
+
+# Instalar o PIP através do Miniconda para gerenciamento de pacotes padrão.  
+# É usado para instalar e gerenciar pacotes de software escritos em Python.
+
+#--> conda install pip
+
+#--> pip install python-decouple
+
+#--> pip install psycopg2-binary 
+
+#--> conda install Pillow
+
+#--> pip install django-widget-tweaks
+
+# Instalar o Framework Django.
+
+#--> conda install django
+
+
+############################################
+# Conferência de instalação de Bibliotecas #
+############################################
+
+# Digite o comando para listas as bibliotecas instaladas.
+
+#--> pip list
+
+# Digite o comando para listas as bibliotecas instaladas.
+
+#--> conda list
+
+#------------------------------------------------------------------------------------------------------------
+
+#################################################
+# Acesso PostgreSQL e Criação do Banco de dados #
+#################################################
+
+# Acesse o postgres via PgAdmin, PSQL ou outro porgrama de sua escolha.
+
+# Utilizando PgAdmin:
+# crie uma regra/usuario no postgres.
+# para esse projeto, crie um usuário com o nome: admin_user
+# para o banco de dados, crie com o nome: admin_db
+
+# Criando um usuário para o banco de dados.
+
+# Servers >> PostgreSQL 16 (ou a versão que foi instalada) >> Botão direito mouse >> create >> Login/Group Role
+
+        #General:
+        #Name: admin_user
+
+        #Definition:
+        #Password: 123456
+
+        #Privileges:
+        #*Selecionar todos*
+
+        #SAVE
+
+
+# Cria um banco de dados.
+
+# Servers >> PostgreSQL 16 (ou a versão que foi instalada)  >> Databases >> botao direito mouse >> create
+
+        #General:
+        #Name: admin_db
+        #Owner: admin_user
+
+        #Security
+        #Privileges: *clicar no +*
+            #Grantee: admin_user
+            #Privileges: *Selecionar todos*
+            #Grantor: não mudar
+        #SAVE
+
+#---------------------------------------------------------------------------------------------------
+#APÓS CONFIGURAR O BANCO DE DADOS E O USUÁRIO, CRIE UM SUPER USUÁRIO:
+#Acesse o terminal no caminho do projeto, COM O AMBIENTE ATIVADO, e digite:
+#--> python manage.py createsuperuser
+
+#após o comando, insira:
+#Usuário: admin_user
+#Email: (um email existente)
+#Password: 123456
+#Password(again): 123456
+#Digite y para forçar o sistema a aceitar uma senha de 6 dígitos
+
+#------------------------------------------Final-----------------------------------------------------------
+
+#CASO O CÓDIGO JÁ ESTIVER CLONADO, FAZER A MIGRAÇÃO PRIMEIRO
+#No terminal do caminho do projeto, digite:
+
+#--> python manage.py migrate
+
+#Após concluir todos requisitos, utilize a linha abaixo no terminal para rodar o código:
+
+#--> python manage.py runserver
+
+#Para acessar o servidor local do django, acessar:
+
+http://localhost:800
+
+
+
